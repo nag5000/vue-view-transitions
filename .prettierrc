@@ -1,0 +1,32 @@
+{
+  "semi": false,
+  "singleQuote": true,
+  "trailingComma": "es5",
+
+  "importOrder": [
+    "^node:",
+    "<THIRD_PARTY_MODULES>",
+    "@nag5000/vue-view-transitions",
+    "^@demo/",
+    "^[./]"
+  ],
+  "importOrderSortSpecifiers": true,
+
+  "plugins": [
+    "@trivago/prettier-plugin-sort-imports",
+    "prettier-plugin-tailwindcss"
+  ],
+
+  "overrides": [
+    {
+      "files": ["*.md"],
+      "options": {}
+    },
+    {
+      "files": ["src/demo/**/*", "docs/**/*.md"],
+      "options": {
+        "printWidth": 76
+      }
+    }
+  ]
+}
