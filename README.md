@@ -65,4 +65,4 @@ function toggle() {
 
 ## Documentation and Demos
 
-Check them out on the website: [nag5000.github.io/vue-view-transitions](https://nag5000.github.io/vue-view-transitions)
+Check them out on the website: https://vue-view-transitions.vercel.app/
