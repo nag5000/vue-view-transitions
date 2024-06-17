@@ -1,3 +1,4 @@
+import { URL, fileURLToPath } from 'node:url'
 import { defineConfig, devices } from '@playwright/experimental-ct-vue'
 
 /**
@@ -29,6 +30,16 @@ export default defineConfig({
 
     screenshot: 'on',
     // video: 'on',
+
+    ctViteConfig: {
+      resolve: {
+        alias: {
+          '@nag5000/vue-view-transitions': fileURLToPath(
+            new URL('./src/lib/index.ts', import.meta.url)
+          ),
+        },
+      },
+    },
   },
 
   /* Configure projects for major browsers */
