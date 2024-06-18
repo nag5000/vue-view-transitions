@@ -3,7 +3,7 @@
 ## Installation
 
 ```sh
-npm i @nag5000/vue-view-transition
+npm i @nag5000/vue-view-transitions
 ```
 
 ## Usage
