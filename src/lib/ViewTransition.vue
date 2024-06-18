@@ -5,11 +5,6 @@
     @enter="onTransitionEnter"
     @leave="onTransitionLeave"
     @before-enter="onBeforeEnter"
-    @after-enter="onAfterEnter"
-    @enter-cancelled="() => console.log('enter-cancelled')"
-    @before-leave="onBeforeLeave"
-    @after-leave="onAfterLeave"
-    @leave-cancelled="() => console.log('leave-cancelled')"
   >
     <slot />
   </Transition>
@@ -87,29 +82,14 @@ function hasStyleProperty(el: Element): el is Element & ElementCSSInlineStyle {
   return 'style' in el
 }
 
-function onBeforeLeave() {
-  console.log('onBeforeLeave')
-}
-
 function onBeforeEnter(el: Element) {
-  console.log('onBeforeEnter')
   if (isSupported && hasStyleProperty(el)) {
     enterElOrigStyleDisplay = el.style.display
     el.style.setProperty('display', 'none', 'important')
   }
 }
 
-function onAfterLeave() {
-  console.log('onAfterLeave')
-}
-
-function onAfterEnter() {
-  console.log('onAfterEnter')
-}
-
 async function animate() {
-  console.log('animate')
-
   const _leaveEl = leaveEl
   const _enterEl = enterEl
   const _leaveDone = leaveDone
@@ -208,7 +188,6 @@ async function animate() {
 }
 
 function onTransitionLeave(el: Element, done: () => void) {
-  console.log('onTransitionLeave')
   leaveEl = el
   leaveDone = done
 
@@ -220,7 +199,6 @@ function onTransitionLeave(el: Element, done: () => void) {
 }
 
 function onTransitionEnter(el: Element, done: () => void) {
-  console.log('onTransitionEnter')
   enterEl = el
   enterDone = done
 
